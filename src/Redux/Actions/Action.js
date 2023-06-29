@@ -8,12 +8,12 @@ export const getUserActionPending = 'getUserAction/pending';
 export const getUserActionFulfilled = 'getUserAction/fulfilled';
 export const getUserActionRejected = 'getUserAction/rejected';
 
-// function getAccount(id){
-//     return async (dispatch,getState)=>{
-//       const {data} = await axios.get(`http://localhost:3000/account/${id}`);
-//       dispatch(initUser(data.amount));
-//     }
-//   }
+export function getAccount(id){
+    return async (dispatch,getState)=>{
+      const {data} = await axios.get(`http://localhost:3000/account/${id}`);
+      dispatch(initUser(data.amount));
+    }
+  }
 
 
 export function increament(){
@@ -32,7 +32,7 @@ export function increamentByBonus(){
     return {type:increaseBonus}
 }
 
-//   function initUser(value){
-//       return {type:getUserActionFulfilled,payload:value}
-//   }
+export function initUser(value){
+      return {type:inc,payload:value}
+  }
   

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { increament,decreament,increamentByAmount } from './Redux/Actions/Action';
+import { increament,decreament,increamentByAmount, getAccount } from './Redux/Actions/Action';
 import { useDispatch, useSelector } from 'react-redux';
 
 function Account({store}) {
@@ -14,7 +14,7 @@ function Account({store}) {
         setAccount({amount:account.amount+1})
     }
 
-    const decreament = ()=>{
+    const decreamentFun = ()=>{
         setAccount({amount:account.amount-1})
     }
 
@@ -32,6 +32,7 @@ function Account({store}) {
       <button onClick={()=>dispatch(decreament())}>Decreament</button>
       <input type='text' onChange={(e)=>setValue(e.target.value)}/>
       <button onClick={()=>dispatch(increamentByAmount())}>increament by amount</button>
+      <button onClick={()=>dispatch(getAccount(1))}>increament by user</button>
     </div>
   );
 }
